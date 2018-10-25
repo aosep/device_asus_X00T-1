@@ -112,30 +112,35 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
     switch (hint) {
         case PowerHint_1_0::INTERACTION:
             if (mSustainedPerfModeOn) {
-                ALOGV("%s: ignoring due to other active perf hints", __func__);
-            } else {
-                mInteractionHandler->Acquire(data);
+                break;
             }
+
+            mInteractionHandler->Acquire(data);
             break;
         case PowerHint_1_0::SUSTAINED_PERFORMANCE:
             if (data && !mSustainedPerfModeOn) {
-                    mHintManager->DoHint("SUSTAINED_PERFORMANCE");
-                    mSustainedPerfModeOn = true;
-            } else if (!data && mSustainedPerfModeOn) {
+                break;
+            }
+
+            if (data) {
+                mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+                mSustainedPerfModeOn = true;
+            } else {
                 mHintManager->EndHint("SUSTAINED_PERFORMANCE");
                 mSustainedPerfModeOn = false;
             }
             break;
         case PowerHint_1_0::LAUNCH:
             if (mSustainedPerfModeOn) {
-                ALOGV("%s: ignoring due to other active perf hints", __func__);
+                break;
+            }
+
+            if (data) {
+                mHintManager->DoHint("LAUNCH");
+                ALOGD("LAUNCH ON");
             } else {
-                if (data) {
-                    // Hint until canceled
-                    mHintManager->DoHint("LAUNCH");
-                } else {
-                    mHintManager->EndHint("LAUNCH");
-                }
+                mHintManager->EndHint("LAUNCH");
+                ALOGD("LAUNCH OFF");
             }
             break;
         case PowerHint_1_0::LOW_POWER:
