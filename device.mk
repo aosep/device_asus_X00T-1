@@ -25,7 +25,7 @@
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
 
-# Prebuilts
+# Prebuilts & Stuff
 PRODUCT_PACKAGES += \
     ScreenRecorder \
     LawnConf \
@@ -35,7 +35,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/Lawnchair/permissions/privapp-permissions-lawnchair.xml:system/etc/privapp-permissions-lawnchair.xml \
-    $(LOCAL_PATH)/prebuilts/Lawnchair/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+    $(LOCAL_PATH)/prebuilts/Lawnchair/permissions/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml \
+    $(LOCAL_PATH)/configs/android.hardware.camera.ar.xml:vendor/etc/permissions/android.hardware.camera.ar.xml
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
