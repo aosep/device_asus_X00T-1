@@ -280,6 +280,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# IPACM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ipacm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ipacm.rc
+
 # IRQ
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
