@@ -112,7 +112,6 @@ vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
@@ -120,11 +119,12 @@ vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# Prebuilt-Audio - from NXP zip 
+# Prebuilt-Audio - from NXP/DRG
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|caac9c761e94d29f25029ebad94fa44415a52638
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb|d7176aede0bdf4cde24656cdcc433605e6975d5a
 -vendor/lib/libaudio_log_utils.so|c0187996e4aa81683518645d1e1931afea5491de
 -vendor/lib64/libaudio_log_utils.so|7200b1d05406530ef20fb8ac1bfd2b2e1845d0dd
 
