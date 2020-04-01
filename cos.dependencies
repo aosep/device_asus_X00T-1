@@ -4,11 +4,27 @@
     "target_path": "kernel/asus/sdm660"
   },
   {
-    "repository": "device_asus_X00T",
-    "target_path": "device/asus/X00T"
+    "repository": "saurabhchardereal/proprietary_vendor_asus",
+    "target_path": "vendor/asus",
+    "branch": "ten",
+    "remote": "github"
+  }
+  {
+    "repository": "LineageOS/android_hardware_qcom_audio",
+    "target_path": "hardware/qcom/audio/msm8998",
+    "branch": "lineage-17.1",
+    "remote": "github"
   },
   {
-    "repository": "proprietary_vendor_asus",
-    "target_path": "vendor/asus/X00T"
-  }
+    "repository": "LineageOS/android_hardware_qcom_media",
+    "target_path": "hardware/qcom/media/msm8998",
+    "branch": "lineage-17.1",
+    "remote": "github"
+  },
+  {
+    "repository": "LineageOS/android_hardware_qcom_display",
+    "target_path": "hardware/qcom/display/msm8998",
+    "branch": "lineage-17.1",
+    "remote": "github"
+  },
 ]
