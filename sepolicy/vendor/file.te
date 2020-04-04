@@ -20,3 +20,4 @@ type fix_baseband_exec, exec_type, vendor_file_type, file_type;
 type debugfs_rpm, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
+type sysfs_fps, sysfs_type, fs_type;

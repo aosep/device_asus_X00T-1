@@ -20,6 +20,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.content.Context;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -49,6 +53,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_EARPIECE_GAIN = "earpiece_gain";
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
+    public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     private CustomSeekBarPreference mTorchBrightness;
     private VibratorStrengthPreference mVibratorStrength;
@@ -56,10 +61,13 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mMicrophoneGain;
     private Preference mKcal;
     private CustomSeekBarPreference mEarpieceGain;
+    private static Context mContext;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences_asus_parts, rootKey);
+        mContext = this.getContext();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
 
@@ -84,6 +92,9 @@ public class DeviceSettings extends PreferenceFragment implements
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
 
+        SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
+        fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
+        fpsInfo.setOnPreferenceChangeListener(this);
 
         mKcal = findPreference(PREF_DEVICE_KCAL);
 
@@ -115,6 +126,15 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(EARPIECE_GAIN_PATH, (int) value);
                 break;
 
+            case PREF_KEY_FPS_INFO:
+                boolean enabled = (Boolean) value;
+                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
+                if (enabled) {
+                    this.getContext().startService(fpsinfo);
+                } else {
+                    this.getContext().stopService(fpsinfo);
+                }
+                break;
             default:
                 break;
         }
