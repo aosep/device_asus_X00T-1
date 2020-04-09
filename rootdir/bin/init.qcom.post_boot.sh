@@ -2576,15 +2576,16 @@ case "$target" in
             echo 140 > /proc/sys/kernel/sched_group_upmigrate
             echo 120 > /proc/sys/kernel/sched_group_downmigrate
 
-            #if the kernel version >=4.14,use the schedutil governor
-            KernelVersionStr=`cat /proc/sys/kernel/osrelease`
-            KernelVersionS=${KernelVersionStr:2:2}
-            KernelVersionA=${KernelVersionStr:0:1}
-            KernelVersionB=${KernelVersionS%.*}
-            if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 14 ]; then
-                sdm660_sched_schedutil_dcvs
+            #apply HMP and schedutil tweaks respectively
+            available_governors=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors)
+
+            if echo "$available_governors" | grep schedutil; then
+               echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+               echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+               setprop sys.use_fifo_ui 1
+               sdm660_sched_schedutil_dcvs
             else
-                sdm660_sched_interactive_dcvs
+               sdm660_sched_interactive_dcvs
             fi
 
             # Set Memory parameters
@@ -4448,11 +4449,3 @@ misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
 real_path=${misc_link##*>}
 setprop persist.vendor.mmi.misc_dev_path $real_path
 
-# set sys.use_fifo_ui prop if eas exist
-	available_governors=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors)
-
-	if echo "$available_governors" | grep schedutil; then
-	  echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-	  echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-	  setprop sys.use_fifo_ui 1
-	fi
