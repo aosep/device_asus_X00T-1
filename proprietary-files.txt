@@ -4,7 +4,7 @@ vendor/lib/libadsp_default_listener.so|9c96cb953e83b6abc90dfbf4b62af7ddbecd97b7
 vendor/lib/libadsp_hvx_callback_skel.so|67cb46e6da3fa84d0cf086172591ba13493e663f
 vendor/lib/libadsp_hvx_stub.so|b3e1d3eef6cfdd51213dad37a8972bc931d1c139
 vendor/lib/libadsprpc.so|c95566209eff0d3e6e7edb3166273ad20dd03297
-vendor/lib/libcdsprpc.so|b0904719623aab0d7381e9ac61cce7809dfad0b6
+vendor/lib/libcdsprpc.so|85fcc62959c2c29aba470df5655a7badc43a8cb1
 vendor/lib/libfastcvadsp_stub.so|9957df1493863d78da261ab3bb8756be3f3d2583
 vendor/lib/libfastcvopt.so|00f5293affa2fcc606b0044f707761c0bb975365
 vendor/lib/libmdsprpc.so|6b3c9f62d95ba9a65d9ce2d21530fa36ebed2414
@@ -891,14 +891,14 @@ vendor/lib64/libsi.so
 vendor/lib64/libssd.so
 
 # DRM (HDCP) - from jasmine-user-10-QKQ1.190910.002
-vendor/lib/libmm-hdcpmgr.so|4af112050d0a5a47980103b309a163a4415de7dd
-vendor/lib64/libmm-hdcpmgr.so|152c347caca4826a64737df11e181472553be446
+vendor/lib/libmm-hdcpmgr.so|1ece57120c97c2f1168950ca7469460caaa4e954
+vendor/lib64/libmm-hdcpmgr.so|f42daaad4741e87db5f4e11633a0b7a8f8eba687
 
 # DRM (Qualcomm Trusted Execution Enviroment) - from jasmine-user-10-QKQ1.190910.002
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|aaa7d15a9ebb63c0152b8fb3bfd07af929e384d4
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|6f7f3af9a00d31126da9d16d0b04f149ad2e0a67
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7c73ca7184e3725264025d16f5
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|1fe6ce202398e0ae3afebd7625c59746e04413e8
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|3202c209bd8249e3f76dec1108788b1a85b53561
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|492f0c24ebb64f9bbdb0f85fc08c239222a2f5fd
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|804029802ccef797eb342af3e09433609fa8b578
 
 # DRM (Widevine) - from jasmine-user-10-QKQ1.190910.002
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
@@ -1152,6 +1152,12 @@ lib64/libmmi.so:vendor/lib64/libmmi.so
 
 # IRQ
 vendor/bin/msm_irqbalance|0e967f5c7eaf8d863a50996459101be47adf96a2
+
+# Perf - from taimen-user-10-QQ2A.200405.005
+vendor/lib/libqti-perfd-client.so|c1c7482b58fbe012f934b54bea78ff52068ea530
+vendor/lib64/libqti-perfd-client.so|d16c17427d6383368d035c9bf028630837b3b969
+vendor/lib/libperfgluelayer.so|500a68089bbbda8bae53459c7adeed4048dce3fd
+vendor/lib64/libperfgluelayer.so|4c95e08abc1cef5b39db06579d8f9faceb8f23d4
 
 # Peripheral manager - from LA.UM.8.2.r1-05100-sdm660.0
 vendor/bin/pm-proxy|bd8cf7d8228db1556cb9d1b933f3d4ab230ddba4
