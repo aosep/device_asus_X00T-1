@@ -40,10 +40,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.havoc.maintainer=@SaurabhCharde
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="crosshatch-user 10 QQ2A.200305.002 6138846 release-keys"
+    PRIVATE_BUILD_DESC="crosshatch-user 10 QQ2A.200405.005 6254899 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/crosshatch/crosshatch:10/QQ2A.200305.002/6138846:user/release-keys
+BUILD_FINGERPRINT := google/crosshatch/crosshatch:10/QQ2A.200405.005/6254899:user/release-keys
 
 # The following system and vendor props will be set by vendor init
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
