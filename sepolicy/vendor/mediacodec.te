@@ -1,2 +1,2 @@
 allow mediacodec default_prop:file { read getattr open };
-
+allow mediacodec vendor_sys_video_prop:file { getattr open read };

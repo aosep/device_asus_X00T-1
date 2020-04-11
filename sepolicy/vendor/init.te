@@ -29,3 +29,7 @@ allow init self:socket { read write };
 allow init self:netlink_route_socket { read };
 binder_call(init, radio)
 allow init sysfs_battery_supply:file { open write };
+allow init vendor_file:file { execute_no_trans };
+allow init sysfs_devices_system_cpu:file { write };
+allow init sysfs_devfreq:file rw_file_perms;
+allow init vendor_toolbox_exec:file { execute_no_trans };

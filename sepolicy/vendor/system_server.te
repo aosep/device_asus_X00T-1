@@ -14,3 +14,5 @@ get_prop(system_server, persist_camera_prop)
 
 allow system_server system_file:dir { write };
 get_prop(system_server, baseband_prop)
+
+allow system_server vendor_file:file { getattr open read execute };
