@@ -30,6 +30,8 @@
     <string name="headphone_gain">Headphone gain</string>
     <string name="microphone_gain">Microphone gain</string>
     <string name="earpiece_gain">Earpiece gain (Calls)</string>
+    <string name="dirac_title">Dirac sound enhancer</string>
+    <string name="dirac_summary">Optimize audio quality</string>
 
     <!-- Kcal Settings -->
     <string name="device_kcal_title">Display Color Calibration</string>
