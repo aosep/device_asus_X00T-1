@@ -1,2 +1,2 @@
-allow mediacodec default_prop:file { read getattr open };
+get_prop(mediacodec, default_prop)
 

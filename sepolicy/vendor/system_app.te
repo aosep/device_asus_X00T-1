@@ -23,5 +23,5 @@ allow system_app proc:file { open write };
 allow system_app selinuxfs:file r_file_perms;
 allow system_app baseband_prop:file { read };
 allow system_app apk_data_file:dir { write };
-allow system_app theme_prop:file { getattr open read write };
-allow system_app theme_prop:property_service { set };
+get_prop(system_app, theme_prop)
+set_prop(system_app, theme_prop)

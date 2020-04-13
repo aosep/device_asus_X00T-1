@@ -1,1 +1,1 @@
-allow crash_dump bluetooth_prop:file { getattr open };
+get_prop(crash_dump, bluetooth_prop)
