@@ -1,8 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ScreenRecorder
-LOCAL_SRC_FILES := ScreenRecorder.apk
+LOCAL_MODULE := OPScreenRecorder
+LOCAL_SRC_FILES := OPScreenRecorder.apk
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_CLASS := APPS

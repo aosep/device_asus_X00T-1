@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilts & Stuff
 PRODUCT_PACKAGES += \
-    ScreenRecorder \
+    OPScreenRecorder \
     LawnConf \
     Lawnfeed \
     Lawnchair \
